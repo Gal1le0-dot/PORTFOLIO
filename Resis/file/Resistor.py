@@ -1,4 +1,4 @@
-import tkinter.messagebox
+
 from tkinter import*
 from tkinter import ttk
 
@@ -51,7 +51,8 @@ class Resistor:
             var1.set(8)
         def Band1_White():
             var1.set(9)
-        #====================================================================
+        #===================================================================.
+        
 
         def Band2_Black():
             var2.set(0)
@@ -113,19 +114,7 @@ class Resistor:
                 root.destroy()
                 return
 
-        def iReset():
-            iReset= tkinter.messagebox.askyesno("Resistor Colour Code Calculator","Confirm if you want to Reset?")
-            if iReset > 0:
-                var1.set("")
-                var2.set("")
-                var3.set("")
-                var4.set("")
-                var5.set("")
-                var6.set("")
-                var7.set("")
-                var8.set("")
-                var9.set("")
-                return
+        
 
         def CalculateResistor():
             var9 =  "%d%d" %((var1.get(),var2.get()))
@@ -162,7 +151,7 @@ class Resistor:
         mainFrame=Frame(self.root, bg='floral white')
         mainFrame.grid()
 
-        TitleFrame = Frame(mainFrame, bd=10, width = 1650, padx=10, bg='floral white', relief = RIDGE)
+        TitleFrame = Frame(mainFrame, bd=10, width = 1650, padx=10, bg='PaleTurquoise3', relief = RIDGE)
         TitleFrame.grid(row=0,column=0, columnspan=2)
         self.lblTitle = Label(TitleFrame, font=('arial' ,40, 'bold'),text="โปรแกรมคำนวนค่าความต้านทานจากแถบสี",
                               bg='floral white',padx=200)
@@ -175,13 +164,13 @@ class Resistor:
         IndicatorFrame.grid(row=1,column=1,sticky=W)
 
 
-        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='floral white',text="1st Band")
+        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='plum2',text="แถบสีที่ 1")
         self.lblTitle.grid(row=0,column=0)
-        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='floral white',text="2nd Band")
+        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='plum2',text="แถบสีที่ 2")
         self.lblTitle.grid(row=0,column=1)
-        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='floral white',text="Multiplier")
+        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='plum2',text="ตัวคูณ")
         self.lblTitle.grid(row=0,column=2)
-        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='floral white',text="Tolerance")
+        self.lblTitle = Label(ResistorFrame, font=('arial' ,13, 'bold'),bg='plum2',text="ค่าความคลาดเคลื่อน")
         self.lblTitle.grid(row=0,column=3)
 
         self.black1=Button(ResistorFrame, width = 16, font=('arial' ,14, 'bold'), text='black',fg='white',
@@ -347,51 +336,43 @@ class Resistor:
         self.None4.grid(row=13,column=3)
         #====================================================IndicatorFrame===================================
 
-        self.lblFirst = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="1st Band")
+        self.lblFirst = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='plum2',text="แถบที่1")
         self.lblFirst.grid(row=0,column=0,sticky=W, pady=10)
         self.txtFirst = Entry(IndicatorFrame, font=('arial' ,16, 'bold'), width = 24, textvariable=var1)
         self.txtFirst.grid(row=0,column=1, pady=10, padx=4 ,columnspan=3)
-        self.lblSecond = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="2nd Band")
+        self.lblSecond = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='plum2',text="แถบที่2")
         self.lblSecond.grid(row=1,column=0,sticky=W, pady=10)
         self.txtSecond = Entry(IndicatorFrame, font=('arial' ,16, 'bold'),width = 24, textvariable=var2)
         self.txtSecond.grid(row=1,column=1, pady=10, padx=4 ,columnspan=3)
 
-        self.lblMultiplier = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="Multiplier")
+        self.lblMultiplier = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='plum2',text="ตัวคูณ")
         self.lblMultiplier.grid(row=2,column=0,sticky=W, pady=10)
         self.txtMultiplier = Entry(IndicatorFrame, font=('arial' ,16, 'bold'),width = 24, textvariable=var3)
         self.txtMultiplier.grid(row=2,column=1, pady=10,padx=4 , columnspan=3)
-        self.lblTolerance = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="Tolerance")
+        self.lblTolerance = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='plum2',text="ค่าความคลาดเคลื่อน")
         self.lblTolerance.grid(row=3,column=0,sticky=W, pady=10)
         self.txtTolerance = Entry(IndicatorFrame, font=('arial' ,16, 'bold'),width = 24, textvariable=var4)
         self.txtTolerance.grid(row=3,column=1, pady=10, padx=4 ,columnspan=3)
 
-        self.lblDivideBy1000 = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="Divide By 1000 ")
-        self.lblDivideBy1000.grid(row=4,column=0,sticky=W, pady=10)
-        self.txtDivideBy1000  = Entry(IndicatorFrame, font=('arial' ,16, 'bold'),width = 24, textvariable=var5)
-        self.txtDivideBy1000.grid(row=4,column=1, pady=10, padx=4 ,columnspan=3)        
-        self.lblResistorValue = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="Resistor Value ")
+        self.lblResistorValue = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='plum2',text="Resistor Value ")
         self.lblResistorValue.grid(row=5,column=0,sticky=W, pady=10)
         self.txtResistorValue  = Entry(IndicatorFrame, font=('arial' ,16, 'bold'),width = 24, textvariable=var6)
         self.txtResistorValue.grid(row=5,column=1, pady=10,padx=4 , columnspan=3)
 
-        self.lblMinRange = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="Min Range")
+        self.lblMinRange = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='plum2',text="Min Range")
         self.lblMinRange.grid(row=6,column=0,sticky=W)
         self.txtMinRange = Entry(IndicatorFrame, font=('arial' ,16, 'bold'),width = 24, textvariable=var7)
         self.txtMinRange.grid(row=6,column=1, pady=10,padx=4 , columnspan=3)
-        self.lblMaxRange = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='floral white',text="Max Range")
+        self.lblMaxRange = Label(IndicatorFrame, font=('arial' ,16, 'bold'),bg='plum2',text="Max Range")
         self.lblMaxRange.grid(row=7,column=0,sticky=W, pady=10)
         self.txtMaxRange  = Entry(IndicatorFrame, font=('arial' ,16, 'bold'),width = 24, textvariable=var8)
         self.txtMaxRange.grid(row=7,column=1, pady=10,padx=4 ,columnspan=3)
 
-        btnCalculate=Button(IndicatorFrame, font=('arial' ,16, 'bold'),text="Calculate",width = 8,
+        btnCalculate=Button(IndicatorFrame, font=('arial' ,20, 'bold'),text="Calculate",width = 8,
                             command = CalculateResistor, height=4)
-        btnCalculate.grid(row=8,column=0, pady=10)
-        btnReset=Button(IndicatorFrame, font=('arial' ,16, 'bold'),text="Reset",width = 8,
-                        command = iReset,height=4)
-        btnReset.grid(row=8,column=1, pady=10)
-        btnExit=Button(IndicatorFrame, font=('arial' ,16, 'bold'),text="Exit",width = 8,
-                       command = iExit, height=4)
-        btnExit.grid(row=8,column=2, pady=10)    
+        btnCalculate.grid(row=8,column=1, pady=10)
+        
+ 
       
 
 
